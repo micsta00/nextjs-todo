@@ -1,11 +1,12 @@
 import { prisma } from "@/db"
 import Link from "next/link"
 
-prisma.todo.create({ data: { title: "test", complete: false } })
+
 
 export default async function Home() {
 
   const todos = await prisma.todo.findMany()
+  prisma.todo.create({ data: { title: "test", complete: false } })
   return (
     <>
       <header className="flex justify-between item-center mb-4">
